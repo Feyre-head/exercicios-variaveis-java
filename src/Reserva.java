@@ -40,7 +40,6 @@ public class Reserva {
         System.out.println("Enter Daily Rate");
         reserva.dailyRate = sc.nextDouble();
 
-        boolean isPaid = false;
 
         System.out.println("Hóspede: " + reserva.guestName);        //nome
         System.out.println("Quarto: " + reserva.guestRoom);       //quarto
