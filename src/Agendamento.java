@@ -37,10 +37,7 @@ public class Agendamento {
     }
 
     public boolean verifiInsurance(){
-        boolean hasInsurance;
-        if(insurance == 1){
-            hasInsurance = true;
-        } return hasInsurance;
+
     }
 
     public static void main(String[] args) {
