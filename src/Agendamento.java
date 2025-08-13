@@ -1,6 +1,4 @@
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Agendamento {
@@ -41,7 +39,8 @@ public class Agendamento {
         return valorFinal - valorConsulta;
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         Agendamento a = new Agendamento();
