@@ -15,7 +15,8 @@ public class Reserva {
     public double totalWithDiscount(){
         return total() * 0.85;
     }
-    public double discountValue(){
+    public double discountValue()
+    {
         return total() - totalWithDiscount();
     }
 
