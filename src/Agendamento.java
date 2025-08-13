@@ -1,44 +1,45 @@
+import java.time.LocalDate;
 import java.util.Date;
-import java.util.Objects;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Agendamento {
 
-    String patientName; //NomePaciente
-    String doctorName;  //Nome Doutor
-    int doctorSpec;  //Especialidade
-    int patientAge;    //Idade do paciente
-    Date appointmentDate;   //Data da consulta
-    int insurance;
+    String nomePaciente;
+    int idadePaciente;
 
-    //Caso o paciente tenha convênio, o valor da consulta terá um desconto de 20%.
-    //O valor base de cada consulta é definido pela especialidade.
+    int especialidadeDoutor;
+    int convenio;
+    double valorConsulta;
+    double valorFinal;
 
-    // Verifica especialidadde Doutor
-    public int doctorSpec(){
-        int appointmentValue;
+    LocalDate dataConsulta = LocalDate.now();
 
-        if (doctorSpec == 1) {
-            appointmentValue = 150;
-            System.out.println("Clínico Geral");
-
-        } else if (doctorSpec == 2) {
-            appointmentValue = 300;
-            System.out.println("Cardiologista");
-
-        } else if (doctorSpec == 3) {
-            appointmentValue = 250;
-            System.out.println("Dermatologista");
-
-        } else {
-            appointmentValue = 150;
-            System.out.println("Pediatra");
-        } return appointmentValue;
+    public int mostrarEspecialidade() {
+        if (especialidadeDoutor == 1) {
+            System.out.println("""
+                    Clínico Geral
+                    Doutor:João""");
+        } else if (especialidadeDoutor == 2) {
+            System.out.println("""
+                    Cardiologista
+                    Doutor: Maciel
+                    """);
+        } else if (especialidadeDoutor == 3) {
+            System.out.println("""
+                    Dermatologista
+                    Doutora: Alana""");
+        } else if (especialidadeDoutor == 4) {
+            System.out.println("""
+                    Pediatria
+                    Doutora: Rosangela""");
+        }
+        return especialidadeDoutor;
     }
 
-//    public boolean verifiInsurance(){
-//
-//    }
+    public double valorDesconto() {
+        return valorFinal - valorConsulta;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -46,37 +47,59 @@ public class Agendamento {
         Agendamento a = new Agendamento();
 
         System.out.println("Informe o nome do Paciente: ");
-        a.patientName = sc.nextLine();
+        a.nomePaciente = sc.nextLine();
 
-        System.out.println("Informe a Idade do Paciente: ");
-        a.patientAge = sc.nextInt();
-
-        System.out.println("Informe o nome do Doutor");
-        a.doctorName = sc.nextLine();
+        System.out.println("Informe a idade do Paciente");
+        a.idadePaciente = sc.nextInt();
 
         System.out.println("""
-                Informe a especialidade do Doutor: \
+                Especialidade:
+                
                 1 - Clínico Geral
-                2 - Cardiologia
-                3 - Dermatologia
+                2 - Cardiologista
+                3 - Dermatologista
                 4 - Pediatria
                 """);
-        a.doctorSpec = sc.nextInt();
+        a.especialidadeDoutor = sc.nextInt();
 
         System.out.println("""
-                Informe se o Paciente tem Convênio: \
+                Informe se o paciente tem Convenio
+                
                 1 - Sim
                 2 - Não
                 """);
-        a.insurance = sc.nextInt();
+        a.convenio = sc.nextInt();
 
-        System.out.println(a.doctorSpec());
+        boolean temConvenio = (a.convenio == 1);
 
+        if (a.especialidadeDoutor == 1) {
+            a.valorConsulta = 100;
+        } else if (a.especialidadeDoutor == 2) {
+            a.valorConsulta = 180;
+        } else if (a.especialidadeDoutor == 3) {
+            a.valorConsulta = 200;
+        } else {
+            a.valorConsulta = 150;
+        }
 
+        if (temConvenio) {
+            a.valorFinal = a.valorConsulta * 0.80;
+        } else {
+            a.valorFinal = a.valorConsulta;
+        }
 
+        System.out.println("====Consulta Agendada====");
+        System.out.println("Data: " + a.dataConsulta);
+        System.out.println("Paciente: " + a.nomePaciente);
+        System.out.println("Idade: " + a.idadePaciente);
+        System.out.println(a.mostrarEspecialidade());
+        System.out.println("Plano Convenio: " + temConvenio);
+        System.out.println("Total R$" + a.valorConsulta);
+        System.out.println("Desc. R$" + a.valorDesconto());
+        System.out.println("Total R$" + a.valorFinal);
 
-
-
-
+//        System.out.println("Valor da Consulta: " + a.valorConsulta);
     }
+
+
 }
