@@ -10,12 +10,13 @@ public class Agendamento {
     int patientAge;    //Idade do paciente
     Date appointmentDate;   //Data da consulta
     int insurance;
+    boolean hasInsurance = true;
 
     //Caso o paciente tenha convênio, o valor da consulta terá um desconto de 20%.
     //O valor base de cada consulta é definido pela especialidade.
 
     // Verifica especialidadde Doutor
-    public int doctorSpec(){
+    public int doctorSpec() {
         int appointmentValue;
 
         if (doctorSpec == 1) {
@@ -33,12 +34,16 @@ public class Agendamento {
         } else {
             appointmentValue = 150;
             System.out.println("Pediatra");
-        } return appointmentValue;
+        }
+        return appointmentValue;
     }
 
-//    public boolean verifiInsurance(){
-//
-//    }
+    public double totalWithDiscount(){
+        return doctorSpec() * 0.8;
+    }
+    public double discountValue(){
+        return doctorSpec() - totalWithDiscount();
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -70,13 +75,15 @@ public class Agendamento {
                 """);
         a.insurance = sc.nextInt();
 
-        System.out.println(a.doctorSpec());
+        System.out.println("Paciente: " + a.patientName);
+        System.out.println("Idade: " + a.patientAge);
+        System.out.println("Doutor:" + a.doctorName);
+        System.out.println("Especialidade: " + a.doctorSpec());
 
+        if(a.hasInsurance)
+        {
 
-
-
-
-
-
+            System.out.println("Desconto Convênio");
+        }
     }
 }
