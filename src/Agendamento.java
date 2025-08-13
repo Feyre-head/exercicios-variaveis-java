@@ -97,7 +97,6 @@ public class Agendamento {
         System.out.println("Desc. R$" + a.valorDesconto());
         System.out.println("Total R$" + a.valorFinal);
 
-//        System.out.println("Valor da Consulta: " + a.valorConsulta);
     }
 
 
