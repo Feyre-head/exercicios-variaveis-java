@@ -6,6 +6,7 @@ public class Agendamento {
     String nomePaciente;
     int idadePaciente;
 
+    String mostrarEspecialidade;
     int especialidadeDoutor;
     int convenio;
     double valorConsulta;
@@ -36,10 +37,10 @@ public class Agendamento {
     }
 
     public double valorDesconto() {
-        return valorFinal - valorConsulta;
+        return  valorConsulta - valorFinal;
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -87,6 +88,7 @@ public class Agendamento {
             a.valorFinal = a.valorConsulta;
         }
 
+
         System.out.println("====Consulta Agendada====");
         System.out.println("Data: " + a.dataConsulta);
         System.out.println("Paciente: " + a.nomePaciente);
@@ -94,9 +96,8 @@ public class Agendamento {
         System.out.println(a.mostrarEspecialidade());
         System.out.println("Plano Convenio: " + temConvenio);
         System.out.println("Total R$" + a.valorConsulta);
-        System.out.println("Desc. R$" + a.valorDesconto());
+        System.out.println("Desc.-R$" + a.valorDesconto());
         System.out.println("Total R$" + a.valorFinal);
-
     }
 
 
