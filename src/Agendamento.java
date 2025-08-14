@@ -14,26 +14,29 @@ public class Agendamento {
 
     LocalDate dataConsulta = LocalDate.now();
 
-    public int mostrarEspecialidade() {
+    public String mostrarEspecialidade() {
+
+        String retorno = "";
+
         if (especialidadeDoutor == 1) {
-            System.out.println("""
+           retorno ="""
                     Clínico Geral
-                    Doutor:João""");
+                    Doutor:João""";
         } else if (especialidadeDoutor == 2) {
-            System.out.println("""
+            retorno ="""
                     Cardiologista
                     Doutor: Maciel
-                    """);
+                    """;
         } else if (especialidadeDoutor == 3) {
-            System.out.println("""
+            retorno ="""
                     Dermatologista
-                    Doutora: Alana""");
+                    Doutora: Alana""";
         } else if (especialidadeDoutor == 4) {
-            System.out.println("""
+            retorno ="""
                     Pediatria
-                    Doutora: Rosangela""");
-        }
-        return especialidadeDoutor;
+                    Doutora: Rosangela""";
+        } return retorno;
+
     }
 
     public double valorDesconto() {
@@ -87,7 +90,6 @@ public class Agendamento {
         } else {
             a.valorFinal = a.valorConsulta;
         }
-
 
         System.out.println("====Consulta Agendada====");
         System.out.println("Data: " + a.dataConsulta);
