@@ -1,8 +1,4 @@
-import com.sun.tools.javac.Main;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
