@@ -26,13 +26,11 @@ public class Sistema {
 
 
     public double calculoDesconto() {
-        double valorTotalDesconto;
-        return (valorTotalDesconto = (precoUnitario * quantidadeCompra) * 0.90);
+        return ((precoUnitario * quantidadeCompra) * 0.90);
     }
 
     public double somaTotal() {
-        double valorTotal;
-        return (valorTotal = precoUnitario * quantidadeCompra);
+        return (precoUnitario * quantidadeCompra);
     }
 
     public String genero() {
