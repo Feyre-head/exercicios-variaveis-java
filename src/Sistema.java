@@ -14,8 +14,7 @@ public class Sistema {
     int quantidadeCompra;
     int opcaoPagamento;
 
-    double precoUnitario;      //Valor da compra
-    //Valor após o desconto
+    double precoUnitario;
 
     boolean pagamentoAvista;
 
