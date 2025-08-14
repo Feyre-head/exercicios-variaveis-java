@@ -46,7 +46,7 @@ public class Sistema {
         return genero;
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Sistema s = new Sistema();
 

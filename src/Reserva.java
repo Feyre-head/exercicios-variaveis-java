@@ -9,16 +9,9 @@ public class Reserva {
     double dailyRate;
     boolean isPaid;
 
-    public double total(){
-        return dailyRate * amountOfDays;
-    }
-    public double totalWithDiscount(){
-        return total() * 0.85;
-    }
-    public double discountValue()
-    {
-        return total() - totalWithDiscount();
-    }
+    public double total(){return dailyRate * amountOfDays;}
+    public double totalWithDiscount(){return total() * 0.85;}
+    public double discountValue() {return total() - totalWithDiscount();}
 
     public static void main(String[] args) {
 

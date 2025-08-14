@@ -6,7 +6,6 @@ public class Agendamento {
     String nomePaciente;
     int idadePaciente;
 
-    String mostrarEspecialidade;
     int especialidadeDoutor;
     int convenio;
     double valorConsulta;
@@ -101,6 +100,5 @@ public class Agendamento {
         System.out.println("Desc.-R$" + a.valorDesconto());
         System.out.println("Total R$" + a.valorFinal);
     }
-
 
 }
