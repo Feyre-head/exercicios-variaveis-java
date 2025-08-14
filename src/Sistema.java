@@ -97,12 +97,9 @@ public class Sistema {
             System.out.println("Desc.: R$-" + valorDesconto);
 
             System.out.println("Total: R$" + s.calculoDesconto());
-
-
-        } else {
-            System.out.println("Total R$" + s.somaTotal());
+            return;
         }
-
+        System.out.println("Total R$" + s.somaTotal());
 
     }
 
